@@ -31,9 +31,13 @@ li :nth-child() {
     background-color: lightgrey;
     font-style:italic black;
 }
-.container {
+.contact-container {
     display:block;
     border-radius: 10px;
     background-color: lightsalmon;
     border: 2px solid black;
+}
+.container {
+    margin: 4px;
+    padding: 6px;
 }

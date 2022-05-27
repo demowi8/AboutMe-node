@@ -7,17 +7,18 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.engine('hbs', ehbs.engine({
-    defaultLayout: 'main',
+    layoutsDir: __dirname + '/views/layout/',
+    defaultLayout: false,
     extname: '.hbs',
-    layoutsDir: __dirname + '/view/layout',
-    partialsDir: __dirname + '/view/partials'
+    partialsDir: __dirname + '/views/partials/'
 }));
-app.set('view engine', 'hbs')
+app.set('view engine', 'hbs');
 
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-    res.send('Hello from the other side')
+   
+    res.render('home')
 })
 
 app.listen(PORT, () => {
